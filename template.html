@@ -1,0 +1,43 @@
+<div class="quiz-area" ng-show="inProgress">
+	<div ng-show="!quizOver">
+		<h2 id="question">{{question}}</h2>
+		<ul id="options">
+			<li ng-repeat="option in options" ng-click="checkAnswer()">
+
+					<input type="radio" id="radio_{{$index}}" name="answer" value="{{option}}" >
+					<label for="radio_{{$index}}" >
+					{{option}}
+					</label>
+			</li>
+		</ul>
+		<!-- <button ng-click="checkAnswer()" ng-show="answerMode" class="btnblack">Responder</button> -->
+
+		<div ng-show="!answerMode">
+			<button ng-click="nextQuestion()" style="opacity:0; width:0;height: 0;position:absolute;" class="next-question btnblack"></button>
+			<span ng-show="correctAns">Correto!</span>
+			<span ng-show="!correctAns">Opa..não foi dessa vez</span>
+		</div>
+
+	</div>
+
+	<div ng-show="quizOver">
+		<h2>O quiz acabou</h2>
+		<div id="score"  >
+		 <span>{{score}}</span> <br>Pontos!
+		</div>
+		<br>
+		<button ng-click="reset()" class="btnblack">Jogar Novamente</button>
+
+	</div>
+
+	<div id="score" ng-hide="quizOver">
+		{{score}} Pontos
+	</div>
+</div>
+
+<div class="intro" ng-show="!inProgress">
+	<p>Pronto para o teste?</p>
+	<button id="startQuiz" ng-click="start()" class="btn">Começar </button>
+
+</div>
+<div  class="corgi" style="background-image:url('{{bgimage}}')"></div>
