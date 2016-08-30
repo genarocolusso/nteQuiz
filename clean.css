@@ -10,105 +10,27 @@ body {
     justify-content: center;
     align-items: center;
      transition: all 0.3s ease;
-     background: #D92E6D;
-     color: #FFF;
+     background: #B6DCD6;
+     color: #2D5969;
        transition:  all 0.4s cubic-bezier(0.33, -0.47, 0.49, 2.45);
 			  animation: 2.5s animacores infinite;
-				overflow: hidden;
-}
-span.anteriorfez {
-    font-size: 14px !important;
-}
-.menino {
-    background: url(homi.png);
-    background-size: cover;
-    height: inherit;
-    position: absolute;
-		    background-position: center left;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    width: 30%;
-		animation-delay: 1.5s;
-}
-
-.menina {
-    background: url(mina.png);
-    background-size: cover;
-		    background-position: center right;
-    height: inherit;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 3;
-			animation-delay: 0.9s;
-    width: 30%;
-}
-
-.gridfoda {
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.2;
-		display: flex;
-flex-direction: row;
-justify-content: space-around;
-
-    overflow: hidden;
-}
-.crazyeigths{
-	width: 100%;
-height: 100%;
-position: absolute;
-top: 0;
-left: 0;
-
-    opacity: 0.6;;
-}
-.quizimg img{
-	    width: 100%;
-}
-.gridfoda.columns{
-	flex-direction: column;
-
-}
-.linhaslado {
-    width: 100%;
-    height: 1px;
-    background: #FF0012;
-    box-shadow: 0px 0px 5px 3px #3938B3;
-    display: block;
-}
-.linhas {
-    width: 1px;
-    height: 100%;
-    background: #FF0012;
-    box-shadow: 0px 0px 5px 3px #3938B3;
-    display: block;
 }
 body.Ingame{
 	animation: none !important;
 }
-
+.crazteights{
+display: none;
+}
 body.Ingame .title{
 animation: none !important;}
-.intro p {
-    color: #43D8EA;
-
-}
 .title{
-	  animation: 2.5s scalecoisa infinite, 2.5s crazycolor infinite;
+	  animation: 2.5s scalecoisa infinite;
 		    line-height: 1.2;
-				color: #F15FEA;
-					margin-top: -2px;
 }
 html{ height:  100%;}
 h2 {
 	font-weight: normal;
-	font-size: 24px;
+	font-size: 18px;
 }
 
 ul {
@@ -129,7 +51,6 @@ button {
 
 
 .container {
-	z-index: 1;
 	position: relative;
     width: 460px;
     margin: 0 auto;
@@ -155,10 +76,9 @@ button {
 
 .btn{
         border: 0;
-				padding: 5px 30px;
-			    background: transparent;
-			    color: #43D8EA;
-			    border: 2px solid #F15FEA;
+    padding: 5px 30px;
+    background:rgba(1, 160, 134, 0.94);
+    color: white;
 }
 .btnblack{
      border: 0;
@@ -174,9 +94,9 @@ h1{
 
 li > label {
 	width: 400px;
-
-    border: 2px solid rgb(255, 255, 255);
-    color: #FFFFFF;
+background: rgba(255, 255, 255, 1);
+border: 2px solid rgba(0,0,0,0.1);
+color: #123C4B;
     height: 20px;
     margin: 5px;
     font-weight: 600;
@@ -189,39 +109,13 @@ li > label {
     position: relative !important;
     display: block;
 }
-.estrelinha{
-	content: '';
-display: block;
-position: absolute;
-top: 20px;
-left: 20px;
-width: 2px;
-height: 2px;
-background: white;
-border-radius: 50%;
-box-shadow: 0px 0px 15px 4px rgba(108, 134, 210, 0.8);
-animation: 60s  starleft infinite linear;
-transition:  all linear;
-}
-
-@keyframes starleft{
-0%{
-	  transform: translateX(0px);
-
-}
-100%{
-	transform: translateX(-1920px);
-
-}
-
-}
 input[type=radio]{
 	position: absolute;
     visibility: hidden;
 }
  input[type=radio]:checked ~ label {
     transition: all 0.5s ease;
-    background:   #9A9EFF ;
+    background:   #FD7310 ;
 
 }
 body ~ label.correto{
@@ -244,16 +138,16 @@ transition: all .2s cubic-bezier(0.24, 0.89, 0, 1.64);
 }
  label.correto {
     transition: all 0.1s ease;
-    background:   #44A27D  !important;
+    background:   #8BC34A  !important;
 
 }
  label.errado {
     transition: all 0.1s ease;
-    background:   #E81656  !important;
+    background:   #F44336  !important;
 
 }
 li > label:hover {
-       background:  #9A9EFF;
+       background:  #38B08A;
     /* padding: 15px; */
     transform: scale(1.3);
     text-align: center;
@@ -319,25 +213,12 @@ font-size: 130px;}
 	}
 
 }
-@keyframes crazycolor{
- 0%{
-	 color: #F15FEA;
- }
-  50%{
-		color: #43D8EA;
-	}
-
-
-}
 
 @keyframes animacores{
   0%{
-    background-color: #D92E6D;;
+    background-color: #B6DCD6;
   }
 		50%{
-		  background-color: #391A66;
+		  background-color: #FFF;
 	}
-	100%{
-    background-color: #D92E6D;;
-  }
 }

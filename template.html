@@ -1,6 +1,7 @@
-<div class="quiz-area" ng-show="inProgress">
+<div    class="quiz-area " ng-show="inProgress">
+
 	<div ng-show="!quizOver">
-		<h2 id="question">{{question}}</h2>
+		<h2  class="title">{{question}}</h2>
 		<ul id="options">
 			<li ng-repeat="option in options" ng-click="checkAnswer()">
 
@@ -10,7 +11,6 @@
 					</label>
 			</li>
 		</ul>
-		<!-- <button ng-click="checkAnswer()" ng-show="answerMode" class="btnblack">Responder</button> -->
 
 		<div ng-show="!answerMode">
 			<button ng-click="nextQuestion()" style="opacity:0; width:0;height: 0;position:absolute;" class="next-question btnblack"></button>
@@ -21,9 +21,11 @@
 	</div>
 
 	<div ng-show="quizOver">
-		<h2>O quiz acabou</h2>
+		<h2>O quiz acabou, você fez</h2>
 		<div id="score"  >
-		 <span>{{score}}</span> <br>Pontos!
+		 <span>{{score*10}}</span> <br>Pontos!<br><br>
+
+		 <span class="anteriorfez"> O jogador anterior fez <b> {{scoreanterior*10}} </b> </span>
 		</div>
 		<br>
 		<button ng-click="reset()" class="btnblack">Jogar Novamente</button>
@@ -31,13 +33,15 @@
 	</div>
 
 	<div id="score" ng-hide="quizOver">
-		{{score}} Pontos
+		{{score*10}} Pontos
 	</div>
 </div>
 
 <div class="intro" ng-show="!inProgress">
-	<p>Pronto para o teste?</p>
+	<p class="">Pronto para o teste?</p>
 	<button id="startQuiz" ng-click="start()" class="btn">Começar </button>
-
+			  <div class="marca"><img src="marca.png" style="
+		 	 width: 160px;margin-top: 20px;
+		 "> </div>
 </div>
 <div  class="corgi" style="background-image:url('{{bgimage}}')"></div>
