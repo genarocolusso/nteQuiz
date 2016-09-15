@@ -1,4 +1,15 @@
+$(document).ready(function(){
+	var vid = document.getElementById("myVideo");
+
+	function playVid() {
+	    vid.play();
+	}
+	playVid();
+});
+
 var app = angular.module('quizApp',[]);
+
+
 
 app.directive('quiz', function(quizFactory) {
 	return {
@@ -30,6 +41,14 @@ app.directive('quiz', function(quizFactory) {
 				$('#titulozera').css("display", "inherit");
 				$('.container').removeClass("finish");
 					$("body").removeClass("Ingame");
+
+					$("#myVideo source").attr("src","temaprincipal.wav");
+					var audio = $("#myVideo");
+					audio[0].pause();
+					audio[0].load();//suspends and restores all audio element
+
+					//audio[0].play(); changed based on Sprachprofi's comment below
+					audio[0].oncanplaythrough = audio[0].play();
 			}
 			scope.randomiza = function(){
 			  quizFactory.shuffle();
@@ -45,15 +64,26 @@ app.directive('quiz', function(quizFactory) {
 				} else {
 					scope.quizOver = true;
 
-					if(scope.score < 4)
-						{scope.bgimage = 'http://emojipedia-us.s3.amazonaws.com/cache/ef/e1/efe189b134eca42690fbd35f1b9c9fa2.png';}
-					if(scope.score > 3 && scope.score < 7)
-						{scope.bgimage = 'http://emojipedia-us.s3.amazonaws.com/cache/2f/71/2f71d332453020f3c909366c2d5514d0.png';}
-					if(scope.score > 6 && scope.score < 10)
-						{scope.bgimage = 'http://emojipedia-us.s3.amazonaws.com/cache/86/9c/869ce067db1339f2edac3ae3e0a54880.png';}
-					if(scope.score == 10)
-						{scope.bgimage = 'http://emojipedia-us.s3.amazonaws.com/cache/ba/7e/ba7eeae6a3ce9f316c19ef6ad49e5f4c.png';}
+					if(scope.score < 10)
+						{
+							$("#myVideo source").attr("src","perdedor.wav");
+							var audio = $("#myVideo");
+							audio[0].pause();
+							audio[0].load();//suspends and restores all audio element
 
+							//audio[0].play(); changed based on Sprachprofi's comment below
+							audio[0].oncanplaythrough = audio[0].play();
+						}
+					if(scope.score == 10)
+						{
+							$("#myVideo source").attr("src","ganhador.wav");
+							var audio = $("#myVideo");
+							audio[0].pause();
+							audio[0].load();//suspends and restores all audio element
+
+							//audio[0].play(); changed based on Sprachprofi's comment below
+							audio[0].oncanplaythrough = audio[0].play();
+						}
 
 					$('.container').delay(400).addClass("finish");
 				}
